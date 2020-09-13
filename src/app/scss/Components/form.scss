@@ -1,0 +1,77 @@
+@import "../variables.scss";
+
+.form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
+
+  &__box {
+    display: flex;
+    flex-direction: column;
+  }
+  &__label {
+    font-size: 1.1rem;
+    line-height: 2rem;
+    font-weight: 500;
+  }
+  &__input {
+    background-color: unset;
+    border: 1px solid $primary;
+    color: $primary;
+    padding: 0.5rem;
+    font-size: 0.8rem;
+    line-height: 1.2rem;
+  }
+  &__btn {
+    margin-top: 1rem;
+    background-color: $primary;
+    border: none;
+    height: 2rem;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    line-height: 2rem;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+  }
+}
+@media only screen and (min-width: 1024px) and (orientation: landscape) {
+  .form {
+    width: 40vw;
+    &__label {
+      font-size: 0.8rem;
+      line-height: 1.5rem;
+    }
+    &__input {
+      height: 1.2rem;
+      padding: 0.3rem;
+      font-size: 0.6rem;
+      line-height: 1rem;
+      &--area {
+        height: 4rem;
+      }
+    }
+    &__btn {
+      height: 1.5rem;
+      line-height: 1.5rem;
+      font-size: 0.5rem;
+    }
+  }
+}
+@media only screen and (min-width: 1600px) and (orientation: landscape) {
+  .form {
+    &__label {
+      font-size: 1rem;
+      line-height: 2rem;
+    }
+    &__input {
+      height: 1.5rem;
+
+      font-size: 0.8rem;
+      line-height: 1.2rem;
+      &--area {
+        height: 5rem;
+      }
+    }
+  }
+}

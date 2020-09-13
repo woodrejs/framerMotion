@@ -1,0 +1,20 @@
+/*fonts*/
+@font-face {
+  font-family: "Quicksand";
+  src: local("Quicksand"), url(./assets/fonts/Quicksand.ttf) format("truetype");
+}
+@font-face {
+  font-family: "Bungee";
+  src: local("Bungee"), url(./assets/fonts/Bungee.ttf) format("truetype");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Quicksand", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

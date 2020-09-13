@@ -1,0 +1,109 @@
+@import "../variables.scss";
+
+.offer {
+  min-height: 100vh;
+  width: 100%;
+  color: $primary;
+  display: grid;
+  row-gap: 1rem;
+
+  grid-template-rows: 0.5fr 0.5fr 4fr 9fr 0.5fr;
+  grid-template-columns: 0.5fr repeat(8, 1fr) 0.5fr;
+
+  &__imgBox {
+    display: none;
+  }
+  &__cartsBox {
+    grid-area: 4/2/5/10;
+  }
+
+  &__txtBox {
+    grid-area: 2/2/4/10;
+
+    &__title {
+      font-family: "Bungee";
+      font-size: 2.5rem;
+    }
+    &__txt {
+      font-size: 1rem;
+      line-height: 1.5rem;
+      font-weight: 300;
+    }
+  }
+}
+
+@media only screen and (min-width: 1024px) and (orientation: landscape) {
+  .offer {
+    grid-template-rows: 0.5fr repeat(8, 1fr) 0.5fr;
+    height: 100vh;
+
+    &__imgBox {
+      display: block;
+      z-index: -1;
+      position: fixed;
+      //height: 100vh;
+
+      //bottom: -40vw;
+      left: 0;
+    }
+    &__img {
+      width: 100vw;
+    }
+
+    &__cartsBox {
+      grid-area: 7/2/10/10;
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 0;
+    }
+
+    &__txtBox {
+      grid-area: 3/2/5/10;
+
+      &__title {
+        font-size: 2.2rem;
+        line-height: 2.2rem;
+        margin-bottom: 1.8rem;
+        text-align: center;
+      }
+      &__txt {
+        font-size: 0.7rem;
+        line-height: 1.2rem;
+        text-align: center;
+      }
+    }
+  }
+}
+@media only screen and (min-width: 1440px) and (orientation: landscape) {
+  .offer {
+    &__cartsBox {
+      grid-area: 6/2/9/10;
+    }
+    &__txtBox {
+      grid-area: 3/2/5/10;
+
+      &__title {
+        font-size: 2rem;
+      }
+      &__txt {
+        font-size: 0.6rem;
+        line-height: 1.5rem;
+      }
+    }
+    &__imgBox {
+      //bottom: -30vw;
+    }
+  }
+}
+@media only screen and (min-width: 1600px) and (orientation: landscape) {
+  .offer {
+    &__txtBox {
+      &__title {
+        font-size: 2.5rem;
+      }
+      &__txt {
+        font-size: 0.9rem;
+      }
+    }
+  }
+}

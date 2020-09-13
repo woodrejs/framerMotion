@@ -1,0 +1,33 @@
+body {
+  background-color: #09161e;
+}
+.app {
+  width: 100%;
+}
+.underline {
+  transform: scaleY(1) !important;
+}
+
+/* Smartphones (landscape ) ----------- */
+@media only screen and (min-width: 378px) {
+  html {
+    font-size: 120%;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  html {
+    font-size: 130%;
+  }
+}
+@media only screen and (min-width: 736px) {
+  html {
+    font-size: 140%;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  html {
+    font-size: 170%;
+  }
+}

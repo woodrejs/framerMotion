@@ -1,0 +1,80 @@
+@import "../variables.scss";
+
+.contact {
+  min-height: 100vh;
+  width: 100%;
+  color: $primary;
+  display: grid;
+  row-gap: 2rem;
+
+  grid-template-rows: 1fr 8fr 1fr 0fr;
+  grid-template-columns: 0.5fr 8fr 0.5fr;
+
+  &__imgBox {
+    display: none;
+  }
+  &__contentBox {
+    grid-area: 2/2/3/3;
+  }
+  &__txtBox {
+    &__title {
+      font-family: "Bungee";
+      font-size: 2rem;
+    }
+    &__txt {
+      font-size: 1rem;
+      line-height: 1.5rem;
+    }
+  }
+
+  &__footerBox {
+    grid-area: 3/2/4/3;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    &__item {
+      font-size: 1rem;
+      line-height: 1.5rem;
+    }
+  }
+}
+@media only screen and (min-width: 1024px) and (orientation: landscape) {
+  .contact {
+    &__imgBox {
+      z-index: -1;
+      display: flex;
+      position: fixed;
+      //height: 100vh;
+      // min-width: 100%;
+      justify-content: center;
+      align-items: center;
+    }
+    &__img {
+      height: 100vh;
+      opacity: 0.3;
+    }
+    &__footerBox {
+      flex-direction: row;
+      align-items: flex-end;
+      justify-content: space-between;
+      &__item {
+        font-size: 0.8rem;
+      }
+    }
+  }
+}
+@media only screen and (min-width: 1024px) and (orientation: landscape) {
+  .contact {
+    height: 100vh;
+    grid-template-rows: 1fr 4fr 1fr 0fr;
+    &__contentBox {
+      display: flex;
+      justify-content: space-between;
+    }
+    &__txtBox {
+      width: 40vw;
+    }
+  }
+}
+@media only screen and (min-width: 1440px) and (orientation: landscape) {
+}

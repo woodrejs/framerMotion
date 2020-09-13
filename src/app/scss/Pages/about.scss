@@ -1,0 +1,172 @@
+@import "../variables.scss";
+
+.about {
+  min-height: 100vh;
+  width: 100%;
+  color: $primary;
+  display: grid;
+  row-gap: 2rem;
+  grid-template-rows: 1fr 8fr 0.5fr;
+  grid-template-columns: 0.5fr 8fr 0.5fr;
+
+  &__txtBox {
+    grid-area: 2/2/3/3;
+    &__title {
+      font-family: "Bungee";
+      font-size: 3rem;
+    }
+    &__txt {
+      font-size: 1.1rem;
+      line-height: 1.6rem;
+      font-weight: 300;
+      text-align: justify;
+    }
+  }
+  &__btn {
+    &:hover {
+      transform: translateY(5px);
+    }
+    transition: 0.3s;
+    cursor: pointer;
+    width: 15rem;
+    height: 2rem;
+    margin-top: 2rem;
+    background-color: $primary;
+    border: none;
+    font-size: 0.8rem;
+    line-height: 2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    &__link {
+      text-decoration: none;
+      color: $secoundary;
+      padding: 1rem;
+    }
+  }
+  &__img {
+    height: 12rem;
+  }
+  &__glitchBox {
+    z-index: -1;
+    &--top {
+      display: none;
+    }
+    &--mid {
+      display: none;
+      position: absolute;
+      top: -7rem;
+    }
+    &--bot {
+      display: none;
+    }
+  }
+}
+@media only screen and (min-width: 600px) and (orientation: portrait) {
+  .about {
+    &__glitchBox {
+      &--bot {
+        img {
+          height: 16rem;
+        }
+        display: block;
+        position: absolute;
+        bottom: -12rem;
+        right: 0;
+      }
+    }
+  }
+}
+@media only screen and (min-width: 800px) and (orientation: landscape) {
+  .about {
+    grid-template-rows: 1fr 8fr 0.5fr;
+    grid-template-columns: 0.5fr 4.5fr 5fr 0.5fr;
+    row-gap: unset;
+
+    &__txtBox {
+      grid-area: 2/2/3/3;
+      &__title {
+        font-size: 3rem;
+      }
+
+      &__txt {
+        font-size: 0.7rem;
+        line-height: 1.1rem;
+        font-weight: 300;
+        text-align: justify;
+      }
+    }
+    &__btn {
+      width: 10rem;
+      height: 1.5rem;
+      font-size: 0.62rem;
+      line-height: 1.5rem;
+      letter-spacing: 1px;
+    }
+
+    &__glitchBox {
+      z-index: -1;
+      &--top {
+        display: block;
+        position: absolute;
+        height: 7rem;
+
+        top: -15vh;
+        left: 55vw;
+        img {
+          height: 12rem;
+        }
+      }
+      &--mid {
+        display: block;
+        top: 40vh;
+        left: 55vw;
+        img {
+          height: 9rem;
+        }
+      }
+      &--bot {
+        display: block;
+        position: fixed;
+
+        top: 75vh;
+        left: 75vw;
+        img {
+          height: 8rem;
+        }
+      }
+    }
+  }
+}
+@media only screen and (min-width: 1600px) and (orientation: landscape) {
+  .about {
+    grid-template-columns: 0.5fr 4fr 6fr 0.5fr;
+
+    &__txtBox {
+      &__txt {
+        font-size: 1rem;
+        line-height: 1.7rem;
+      }
+    }
+    &__glitchBox {
+      &--top {
+        img {
+          height: 16rem;
+        }
+      }
+      &--mid {
+        left: 60vw;
+        top: 45vh;
+        img {
+          height: 12rem;
+        }
+      }
+      &--bot {
+        top: 85vh;
+        img {
+          height: 9rem;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,190 @@
+@import "../variables.scss";
+
+.home {
+  height: 100vh;
+  width: 100%;
+  display: grid;
+
+  grid-template-rows: 0.5fr repeat(8, 1fr) 0.5fr;
+  grid-template-columns: 0.5fr repeat(8, 1fr) 0.5fr;
+  color: $primary;
+
+  &__header {
+    grid-area: 3/3/5/9;
+    justify-self: center;
+    &__title {
+      font-family: "Bungee";
+      max-width: 8ch;
+      text-transform: capitalize;
+      text-align: center;
+      font-size: 2.5rem;
+      line-height: 2.1rem;
+    }
+  }
+  &__hero {
+    position: absolute;
+    left: 50%;
+    top: 60%;
+    transform: translate(-50%, -60%);
+    z-index: -1;
+    &__img {
+      height: 25vh;
+    }
+  }
+  &__btnBox {
+    grid-area: 9/3/10/9;
+    justify-self: center;
+    align-self: start;
+    &__link {
+      text-decoration: none;
+      color: $secoundary;
+      padding: 1rem;
+    }
+    &__btn {
+      transition: 0.3s;
+      &:hover {
+        transform: translateY(5px);
+      }
+      cursor: pointer;
+      background-color: $primary;
+      border: none;
+      width: 7rem;
+      height: 2rem;
+      text-transform: uppercase;
+      font-weight: bold;
+      font-size: 0.7rem;
+      letter-spacing: 1.8px;
+    }
+  }
+
+  &__info {
+    display: none;
+    justify-content: space-between;
+    align-items: flex-end;
+    &__txt {
+      font-size: 0.75rem;
+      max-width: 30ch;
+      line-height: 1.1rem;
+      font-weight: 400;
+      &--right {
+        text-align: right;
+      }
+    }
+    &__line {
+      height: 5vh;
+    }
+  }
+}
+
+@media only screen and (min-width: 600px) and (orientation: portrait) {
+  .home {
+    &__header {
+      grid-area: 2/2/5/5;
+      &__title {
+        text-align: start;
+        font-size: 2.8rem;
+        line-height: 2.3rem;
+      }
+    }
+
+    &__hero {
+      top: 50%;
+      transform: translate(-50%, -50%);
+      &__img {
+        height: 20vh;
+      }
+    }
+    &__btnBox {
+      grid-area: 7/4/8/8;
+      align-self: end;
+    }
+
+    &__info {
+      display: flex;
+
+      grid-area: 8/2/10/10;
+    }
+  }
+}
+@media only screen and (min-width: 400px) and (orientation: landscape) {
+  .home {
+    &__header {
+      grid-area: 2/2/5/5;
+      justify-self: start;
+      &__title {
+        text-align: start;
+        font-size: 1.9rem;
+        line-height: 1.6rem;
+      }
+    }
+
+    &__hero {
+      &__img {
+        height: 30vh;
+      }
+    }
+
+    &__btnBox {
+      grid-area: 8/4/10/8;
+      align-self: center;
+      &__btn {
+        width: 6rem;
+        height: 1.5rem;
+        font-size: 0.5rem;
+        letter-spacing: 1.8px;
+      }
+    }
+  }
+}
+@media only screen and (min-width: 800px) and (orientation: landscape) {
+  .home {
+    &__header {
+      &__title {
+        font-size: 2.8rem;
+        line-height: 2.2rem;
+      }
+    }
+
+    &__hero {
+      &__img {
+        height: 20vh;
+      }
+    }
+
+    &__btnBox {
+      grid-area: 8/4/9/8;
+      align-self: start;
+    }
+    &__info {
+      display: flex;
+
+      grid-area: 9/2/10/10;
+      &__line {
+        display: none;
+      }
+      &__txt {
+        font-size: 0.7rem;
+      }
+    }
+  }
+}
+@media only screen and (min-width: 1280px) and (orientation: landscape) {
+  .home {
+    &__header {
+      &__title {
+        font-size: 3.3rem;
+        line-height: 2.6rem;
+      }
+    }
+  }
+}
+@media only screen and (min-width: 1920px) and (orientation: landscape) {
+  .home {
+    &__header {
+      &__title {
+        font-size: 4rem;
+        line-height: 3.3rem;
+      }
+    }
+  }
+}
